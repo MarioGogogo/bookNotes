@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Docker 使用指南 | 👨🏽‍💻前端漫游指南</title>
+    <meta name="description" content="Never Stop Learning">
+    <link rel="icon" href="/bookNotes/favicon.ico">
+    
+    <link rel="preload" href="/bookNotes/assets/css/0.styles.02a9e5b3.css" as="style"><link rel="preload" href="/bookNotes/assets/js/app.a5c1f5ee.js" as="script"><link rel="preload" href="/bookNotes/assets/js/50.68dee525.js" as="script"><link rel="prefetch" href="/bookNotes/assets/js/10.7897844d.js"><link rel="prefetch" href="/bookNotes/assets/js/11.daa46aa2.js"><link rel="prefetch" href="/bookNotes/assets/js/12.19efc583.js"><link rel="prefetch" href="/bookNotes/assets/js/13.5b7f839d.js"><link rel="prefetch" href="/bookNotes/assets/js/14.47b4842d.js"><link rel="prefetch" href="/bookNotes/assets/js/15.959aa0c7.js"><link rel="prefetch" href="/bookNotes/assets/js/16.e07efd9a.js"><link rel="prefetch" href="/bookNotes/assets/js/17.06df2fb1.js"><link rel="prefetch" href="/bookNotes/assets/js/18.40dee455.js"><link rel="prefetch" href="/bookNotes/assets/js/19.ea09a6c5.js"><link rel="prefetch" href="/bookNotes/assets/js/2.2daf200c.js"><link rel="prefetch" href="/bookNotes/assets/js/20.ffb27053.js"><link rel="prefetch" href="/bookNotes/assets/js/21.33f73e1d.js"><link rel="prefetch" href="/bookNotes/assets/js/22.9e99b0e5.js"><link rel="prefetch" href="/bookNotes/assets/js/23.5417826f.js"><link rel="prefetch" href="/bookNotes/assets/js/24.59000dfc.js"><link rel="prefetch" href="/bookNotes/assets/js/25.acc91333.js"><link rel="prefetch" href="/bookNotes/assets/js/26.6af21f36.js"><link rel="prefetch" href="/bookNotes/assets/js/27.3d2e96f4.js"><link rel="prefetch" href="/bookNotes/assets/js/28.262d38c6.js"><link rel="prefetch" href="/bookNotes/assets/js/29.1eca77c6.js"><link rel="prefetch" href="/bookNotes/assets/js/3.2e998a1c.js"><link rel="prefetch" href="/bookNotes/assets/js/30.af641b29.js"><link rel="prefetch" href="/bookNotes/assets/js/31.3c9c863c.js"><link rel="prefetch" href="/bookNotes/assets/js/32.07ea838c.js"><link rel="prefetch" href="/bookNotes/assets/js/33.acab53c4.js"><link rel="prefetch" href="/bookNotes/assets/js/34.48dd7240.js"><link rel="prefetch" href="/bookNotes/assets/js/35.7c3ec624.js"><link rel="prefetch" href="/bookNotes/assets/js/36.ccd745ec.js"><link rel="prefetch" href="/bookNotes/assets/js/37.005d8f1b.js"><link rel="prefetch" href="/bookNotes/assets/js/38.fc6a5f21.js"><link rel="prefetch" href="/bookNotes/assets/js/39.44489367.js"><link rel="prefetch" href="/bookNotes/assets/js/4.dd5fac1d.js"><link rel="prefetch" href="/bookNotes/assets/js/40.34c225a3.js"><link rel="prefetch" href="/bookNotes/assets/js/41.1e7d641f.js"><link rel="prefetch" href="/bookNotes/assets/js/42.236029dd.js"><link rel="prefetch" href="/bookNotes/assets/js/43.09a1cad0.js"><link rel="prefetch" href="/bookNotes/assets/js/44.8165a802.js"><link rel="prefetch" href="/bookNotes/assets/js/45.01f5f11f.js"><link rel="prefetch" href="/bookNotes/assets/js/46.46b782a7.js"><link rel="prefetch" href="/bookNotes/assets/js/47.1ec61019.js"><link rel="prefetch" href="/bookNotes/assets/js/48.625d747e.js"><link rel="prefetch" href="/bookNotes/assets/js/49.f97abe71.js"><link rel="prefetch" href="/bookNotes/assets/js/5.dd4a8225.js"><link rel="prefetch" href="/bookNotes/assets/js/51.583184a8.js"><link rel="prefetch" href="/bookNotes/assets/js/52.c7af0993.js"><link rel="prefetch" href="/bookNotes/assets/js/53.b647ed86.js"><link rel="prefetch" href="/bookNotes/assets/js/54.a5fbaa3d.js"><link rel="prefetch" href="/bookNotes/assets/js/55.a7b560d2.js"><link rel="prefetch" href="/bookNotes/assets/js/56.33015b4d.js"><link rel="prefetch" href="/bookNotes/assets/js/57.80ffe644.js"><link rel="prefetch" href="/bookNotes/assets/js/58.11a6edd1.js"><link rel="prefetch" href="/bookNotes/assets/js/59.e8bead8f.js"><link rel="prefetch" href="/bookNotes/assets/js/6.4505f2dd.js"><link rel="prefetch" href="/bookNotes/assets/js/60.cda1b788.js"><link rel="prefetch" href="/bookNotes/assets/js/61.16b57984.js"><link rel="prefetch" href="/bookNotes/assets/js/62.0476eb6a.js"><link rel="prefetch" href="/bookNotes/assets/js/63.f31d1faa.js"><link rel="prefetch" href="/bookNotes/assets/js/64.2e35d3be.js"><link rel="prefetch" href="/bookNotes/assets/js/65.e4ba2ad2.js"><link rel="prefetch" href="/bookNotes/assets/js/66.c2f247d4.js"><link rel="prefetch" href="/bookNotes/assets/js/67.393df1f2.js"><link rel="prefetch" href="/bookNotes/assets/js/68.875cabd4.js"><link rel="prefetch" href="/bookNotes/assets/js/69.54e25a4e.js"><link rel="prefetch" href="/bookNotes/assets/js/7.670f9f76.js"><link rel="prefetch" href="/bookNotes/assets/js/70.17e6d438.js"><link rel="prefetch" href="/bookNotes/assets/js/71.95131df7.js"><link rel="prefetch" href="/bookNotes/assets/js/72.83e3f4f8.js"><link rel="prefetch" href="/bookNotes/assets/js/73.2a333618.js"><link rel="prefetch" href="/bookNotes/assets/js/74.13fba1a5.js"><link rel="prefetch" href="/bookNotes/assets/js/75.8ea1e0ca.js"><link rel="prefetch" href="/bookNotes/assets/js/76.1bd9ac71.js"><link rel="prefetch" href="/bookNotes/assets/js/77.470d01e4.js"><link rel="prefetch" href="/bookNotes/assets/js/78.29be0910.js"><link rel="prefetch" href="/bookNotes/assets/js/79.0da8502d.js"><link rel="prefetch" href="/bookNotes/assets/js/8.3c63f96d.js"><link rel="prefetch" href="/bookNotes/assets/js/80.f840286c.js"><link rel="prefetch" href="/bookNotes/assets/js/81.8dc38613.js"><link rel="prefetch" href="/bookNotes/assets/js/82.63f9f794.js"><link rel="prefetch" href="/bookNotes/assets/js/83.92125d6e.js"><link rel="prefetch" href="/bookNotes/assets/js/84.2dd13e00.js"><link rel="prefetch" href="/bookNotes/assets/js/85.90ac8d90.js"><link rel="prefetch" href="/bookNotes/assets/js/86.00a9730f.js"><link rel="prefetch" href="/bookNotes/assets/js/87.8a9e4f11.js"><link rel="prefetch" href="/bookNotes/assets/js/88.4b63d7ed.js"><link rel="prefetch" href="/bookNotes/assets/js/89.8cbf23b4.js"><link rel="prefetch" href="/bookNotes/assets/js/9.2033ddc1.js"><link rel="prefetch" href="/bookNotes/assets/js/90.871ef198.js"><link rel="prefetch" href="/bookNotes/assets/js/91.f87deae7.js"><link rel="prefetch" href="/bookNotes/assets/js/92.3eb8316d.js"><link rel="prefetch" href="/bookNotes/assets/js/93.ccc52aee.js"><link rel="prefetch" href="/bookNotes/assets/js/94.17ce85a1.js"><link rel="prefetch" href="/bookNotes/assets/js/95.490c860d.js"><link rel="prefetch" href="/bookNotes/assets/js/96.ed694272.js"><link rel="prefetch" href="/bookNotes/assets/js/97.e9cae244.js">
+    <link rel="stylesheet" href="/bookNotes/assets/css/0.styles.02a9e5b3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/bookNotes/" class="home-link router-link-active"><!----> <span class="site-name">👨🏽‍💻前端漫游指南</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/bookNotes/macosguide/" class="nav-link router-link-active">MacOS配置</a></div><div class="nav-item"><a href="/bookNotes/weekstudy/" class="nav-link">周学系列</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">学习系列</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bookNotes/cssmagic/" class="nav-link">CSS揭秘</a></li><li class="dropdown-item"><!----> <a href="/bookNotes/algorithm/" class="nav-link">前端数据结构与算法</a></li><li class="dropdown-item"><!----> <a href="/bookNotes/interview/" class="nav-link">面试知多少</a></li><li class="dropdown-item"><!----> <a href="/bookNotes/reactstatus/" class="nav-link">React状态管理与同构实战</a></li><li class="dropdown-item"><!----> <a href="/bookNotes/koa2/" class="nav-link">Koa2系列</a></li><li class="dropdown-item"><!----> <a href="/bookNotes/nodejs/" class="nav-link">Nodejs系列</a></li></ul></div></div><div class="nav-item"><a href="http://h5web.cc/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">GitHub</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/MarioGogogo" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub地址
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/MarioGogogo/react" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  算法仓库
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/bookNotes/macosguide/" class="nav-link router-link-active">MacOS配置</a></div><div class="nav-item"><a href="/bookNotes/weekstudy/" class="nav-link">周学系列</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">学习系列</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bookNotes/cssmagic/" class="nav-link">CSS揭秘</a></li><li class="dropdown-item"><!----> <a href="/bookNotes/algorithm/" class="nav-link">前端数据结构与算法</a></li><li class="dropdown-item"><!----> <a href="/bookNotes/interview/" class="nav-link">面试知多少</a></li><li class="dropdown-item"><!----> <a href="/bookNotes/reactstatus/" class="nav-link">React状态管理与同构实战</a></li><li class="dropdown-item"><!----> <a href="/bookNotes/koa2/" class="nav-link">Koa2系列</a></li><li class="dropdown-item"><!----> <a href="/bookNotes/nodejs/" class="nav-link">Nodejs系列</a></li></ul></div></div><div class="nav-item"><a href="http://h5web.cc/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">GitHub</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/MarioGogogo" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub地址
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/MarioGogogo/react" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  算法仓库
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/bookNotes/macosguide/" class="sidebar-link">MacOS 漫游指南</a></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>软件安装以及下载</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>网路相关工具</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/bookNotes/macosguide/Alfred使用指南.html" class="sidebar-link">Alfred使用指南</a></li><li><a href="/bookNotes/macosguide/Charles使用指南.html" class="sidebar-link">Charles使用指南</a></li><li><a href="/bookNotes/macosguide/Docker使用指南.html" class="active sidebar-link">Docker 使用指南</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/bookNotes/macosguide/Docker使用指南.html#列出镜像列表" class="sidebar-link">列出镜像列表</a></li><li class="sidebar-sub-header"><a href="/bookNotes/macosguide/Docker使用指南.html#以相应的镜像启动容器" class="sidebar-link">以相应的镜像启动容器</a></li><li class="sidebar-sub-header"><a href="/bookNotes/macosguide/Docker使用指南.html#获取一个新镜像" class="sidebar-link">获取一个新镜像</a></li><li class="sidebar-sub-header"><a href="/bookNotes/macosguide/Docker使用指南.html#查找镜像" class="sidebar-link">查找镜像</a></li><li class="sidebar-sub-header"><a href="/bookNotes/macosguide/Docker使用指南.html#拉取-httpd-镜像" class="sidebar-link">拉取 httpd 镜像</a></li><li class="sidebar-sub-header"><a href="/bookNotes/macosguide/Docker使用指南.html#创建镜像" class="sidebar-link">创建镜像</a></li><li class="sidebar-sub-header"><a href="/bookNotes/macosguide/Docker使用指南.html#更新镜像" class="sidebar-link">更新镜像</a></li><li class="sidebar-sub-header"><a href="/bookNotes/macosguide/Docker使用指南.html#构建镜像" class="sidebar-link">构建镜像</a></li><li class="sidebar-sub-header"><a href="/bookNotes/macosguide/Docker使用指南.html#设置镜像标签" class="sidebar-link">设置镜像标签</a></li><li class="sidebar-sub-header"><a href="/bookNotes/macosguide/Docker使用指南.html#删除-docker-镜像中为-none-的镜像" class="sidebar-link">删除 Docker 镜像中为 none 的镜像</a></li></ul></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>编程工具</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>编程语言相关环境</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>出国</span> <span class="arrow right"></span></p> <!----></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="docker-使用指南"><a href="#docker-使用指南" aria-hidden="true" class="header-anchor">#</a> Docker 使用指南</h1> <p>当运行容器时，使用的镜像如果在本地中不存在，<a href="https://www.centos.bz/tag/docker/" target="_blank" rel="noopener noreferrer">docker<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 就会自动从 docker 镜像仓库中下载，默认是从 Docker Hub 公共镜像源下载。</p> <p>下面我们来学习：</p> <ul><li><ol><li>管理和使用本地 Docker 主机镜像</li></ol></li> <li><ol start="2"><li>创建镜像</li></ol></li></ul> <h2 id="列出镜像列表"><a href="#列出镜像列表" aria-hidden="true" class="header-anchor">#</a> 列出镜像列表</h2> <p>我们可以使用 <code>docker images</code> 来列出存在于宿主机上的镜像。</p> <div class="language- extra-class"><pre class="language-text"><code> root@ubuntu:~# docker images
+ REPOSITORY         TAG        IMAGE ID     CREATED      SIZE
+ alpine           latest      055936d39205   3 weeks ago    5.53MB
+ mysql           5.7        7faa3c53e6d6   3 weeks ago    373MB
+ ubuntu           15.04       d1b55fd07600   3 years ago    131MB
+ ubuntu           16.04       2a697363a870   2 weeks ago    119MB
+
+
+</code></pre></div><p>各个选项说明:</p> <ul><li>REPOSITORY：表示镜像的仓库源</li> <li>TAG：镜像的标签</li> <li>IMAGE ID：镜像 ID</li> <li>CREATED：镜像创建时间</li> <li>SIZE：镜像大小</li></ul> <p>同一仓库源可以有多个 TAG，代表这个仓库源的不同个版本，如 ubuntu 仓库源里，有 16.04、15.04 等多个不同的版本，我们使用 REPOSITORY:TAG 来定义不同的镜像。</p> <h2 id="以相应的镜像启动容器"><a href="#以相应的镜像启动容器" aria-hidden="true" class="header-anchor">#</a> 以相应的镜像启动容器</h2> <p>我们如果要使用版本为 16.04 的 ubuntu 系统镜像来运行容器时，命令如下：</p> <div class="language- extra-class"><pre class="language-text"><code>root@ubuntu:~# docker run -it ubuntu:16.04 sh
+
+
+</code></pre></div><p>如果要使用版本为 15.04 的 ubuntu 系统镜像，则命令如下：</p> <div class="language- extra-class"><pre class="language-text"><code>root@ubuntu:~# docker run -it ubuntu:15.04 sh
+
+
+</code></pre></div><p>各个参数解析：</p> <ul><li>docker: Docker 的二进制执行文件。</li> <li>run: 与前面的 docker 组合来运行一个容器。</li> <li>-it: 其实是两个参数组成， -i 和 -t，-i: 允许你对容器内的标准输入 (STDIN) 进行交互。-t: 在新容器内指定一个伪终端或终端。</li> <li>ubuntu:15.04 指定要运行的镜像，Docker 首先从本地主机上查找镜像是否存在，如果不存在，Docker 就会从镜像仓库 Docker Hub 下载公共镜像。</li> <li>sh: 执行命令。</li></ul> <h2 id="获取一个新镜像"><a href="#获取一个新镜像" aria-hidden="true" class="header-anchor">#</a> 获取一个新镜像</h2> <p>当我们在宿主机上使用一个不存在的镜像时 Docker 就会自动下载这个镜像。如果我们想预先下载这个镜像，我们可以使用 <code>docker pull</code> 命令来下载它。</p> <div class="language- extra-class"><pre class="language-text"><code> root@ubuntu:~# docker pull ubuntu:18.04
+ 18.04: Pulling from library/ubuntu
+ 6abc03819f3e: Pull complete
+ 05731e63f211: Pull complete
+ 0bd67c50d6be: Pull complete
+ Digest: sha256:f08638ec7ddc90065187e7eabdfac3c96e5ff0f6b2f1762cf31a4f49b53000a5
+ Status: Downloaded newer image for ubuntu:18.04
+
+
+</code></pre></div><p>下载完成后，我们可以直接使用这个镜像来运行容器。</p> <h2 id="查找镜像"><a href="#查找镜像" aria-hidden="true" class="header-anchor">#</a> 查找镜像</h2> <p>我们可以从 Docker Hub 网站来搜索镜像，Docker Hub 网址为： <a href="https://hub.docker.com/" target="_blank" rel="noopener noreferrer">https://hub.docker.com/<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a><br>
+我们也可以使用 <code>docker search</code> 命令来搜索镜像。比如我们需要一个 <a href="https://www.centos.bz/tag/httpd/" target="_blank" rel="noopener noreferrer">httpd<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 的镜像来作为我们的 web 服务。我们可以通过 <code>docker search</code> 命令搜索 httpd 来寻找适合我们的镜像。</p> <p><img src="http://book.52react.cn/20191227132016.png" alt></p> <ul><li>NAME: 镜像仓库源的名称</li> <li>DESCRIPTION: 镜像的描述</li> <li>OFFICIAL: 是否 docker 官方发布</li></ul> <h2 id="拉取-httpd-镜像"><a href="#拉取-httpd-镜像" aria-hidden="true" class="header-anchor">#</a> 拉取 httpd 镜像</h2> <p>我们决定使用上图中的 httpd 官方版本的镜像，使用命令 <code>docker pull</code> 来下载镜像。</p> <div class="language- extra-class"><pre class="language-text"><code>root@ubuntu:~# docker pull httpd
+ Using default tag: latest
+ latest: Pulling from library/httpd
+ 743f2d6c1f65: Already exists
+ c92eb69846a6: Pull complete
+ 2211b052800a: Pull complete
+ aed180197314: Pull complete
+ 7c472a4980a7: Pull complete
+ Digest: sha256:a35ad614c1ffc6fe931f12dc42b682edbdcc62cf78d8edc41499dd90ef0f8003
+ Status: Downloaded newer image for httpd:latest
+
+
+</code></pre></div><p>下载完成后，我们就可以使用这个镜像了。</p> <h2 id="创建镜像"><a href="#创建镜像" aria-hidden="true" class="header-anchor">#</a> 创建镜像</h2> <p>当我们从 docker 镜像仓库中下载的镜像不能满足我们的需求时，我们可以通过以下两种方式对镜像进行更改。</p> <ul><li><ol><li>从已经创建的容器中更新镜像，并且提交这个镜像</li></ol></li> <li><ol start="2"><li>使用 Dockerfile 指令来创建一个新的镜像</li></ol></li></ul> <h2 id="更新镜像"><a href="#更新镜像" aria-hidden="true" class="header-anchor">#</a> 更新镜像</h2> <p>更新镜像之前，我们需要使用镜像来创建一个容器。</p> <div class="language- extra-class"><pre class="language-text"><code>root@ubuntu:~# docker run -it ubuntu:16.04 sh
+
+
+</code></pre></div><p>在运行的容器内使用 apt-get <a href="https://www.centos.bz/tag/update/" target="_blank" rel="noopener noreferrer">update<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 命令进行更新。</p> <div class="language- extra-class"><pre class="language-text"><code> # apt-get update
+ Get:1 http://archive.ubuntu.com/ubuntu xenial InRelease [247 kB]
+ Get:2 http://security.ubuntu.com/ubuntu xenial-security InRelease [109 kB]
+ Get:3 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
+ Get:4 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
+ Get:5 http://archive.ubuntu.com/ubuntu xenial/main amd64 Packages [1558 kB]
+ Get:6 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [844 kB]
+ Get:7 http://archive.ubuntu.com/ubuntu xenial/restricted amd64 Packages [14.1 kB]
+ Get:8 http://archive.ubuntu.com/ubuntu xenial/universe amd64 Packages [9827 kB]
+ Get:9 http://archive.ubuntu.com/ubuntu xenial/multiverse amd64 Packages [176 kB]
+ Get:10 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [1237 kB]
+ Get:11 http://security.ubuntu.com/ubuntu xenial-security/restricted amd64 Packages [12.7 kB]
+ Get:12 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [556 kB]
+ Get:13 http://archive.ubuntu.com/ubuntu xenial-updates/restricted amd64 Packages [13.1 kB]
+ Get:14 http://archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [967 kB]
+ Get:15 http://archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 Packages [19.1 kB]
+ Get:16 http://archive.ubuntu.com/ubuntu xenial-backports/main amd64 Packages [7942 B]
+ Get:17 http://archive.ubuntu.com/ubuntu xenial-backports/universe amd64 Packages [8532 B]
+ Get:18 http://security.ubuntu.com/ubuntu xenial-security/multiverse amd64 Packages [6113 B]
+ Fetched 15.8 MB in 8s (1933 kB/s)
+ Reading package lists... Done
+
+
+</code></pre></div><p>在完成操作之后，输入 exit 命令来退出这个容器。</p> <p>通过 <code>docker ps -a</code> 查看所有容器：</p> <div class="language- extra-class"><pre class="language-text"><code>root@ubuntu:~# docker ps -a
+ CONTAINER ID   IMAGE              COMMAND        CREATED      STATUS           PORTS          NAMES
+ 12847d9f5071   ubuntu:16.04           &quot;sh&quot;          2 minutes ago   Exited (0) 43 seconds ago               peaceful_edison
+ 3cec6f5e47c0   httpd              &quot;httpd-foreground&quot;   5 minutes ago   Exited (0) 5 minutes ago               vigilant_heisenberg
+
+
+</code></pre></div><p>此时 ID 为 12847d9f5071 的容器，是按我们的需求更改的容器。我们可以通过命令 docker <a href="https://www.centos.bz/tag/commit/" target="_blank" rel="noopener noreferrer">commit<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 来提交容器副本。</p> <div class="language- extra-class"><pre class="language-text"><code>root@ubuntu:~# docker commit -m=&quot;has update&quot; -a=&quot;yeqing112&quot; 12847d9f5071 yeqing112/ubuntu:v2
+sha256:5cce1167ee4c083ff9b87e61a58081805e76d015a12a4811bd152263aa013860
+
+
+</code></pre></div><p>各个参数说明：</p> <ul><li>-m: 提交的描述信息。</li> <li>-a: 指定镜像作者。</li> <li>12847d9f5071: 容器 ID。</li> <li>yeqing112/ubuntu:v2: 指定要创建的目标镜像名。</li></ul> <p>我们可以使用 <code>docker images</code> 命令来查看我们的新镜像 yeqing112/ubuntu:v2：</p> <div class="language- extra-class"><pre class="language-text"><code>root@ubuntu:~# docker images
+REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
+yeqing112/ubuntu             v2                  5cce1167ee4c        2 minutes ago       144MB
+ubuntu                       16.04               2a697363a870        2 weeks ago         119MB
+
+
+</code></pre></div><p>从上面的信息中可以看到我们更新过的镜像，文件体积明显比之前大了一些。</p> <h2 id="构建镜像"><a href="#构建镜像" aria-hidden="true" class="header-anchor">#</a> 构建镜像</h2> <p>除了上面更新镜像的方法，我们还可以使用命令 <code>docker build</code> ， 从零开始来构建一个新的镜像。为此，我们需要创建一个 Dockerfile 文件，其中包含一组指令来告诉 Docker 如何构建我们的镜像。</p> <div class="language- extra-class"><pre class="language-text"><code>root@ubuntu:~# cat Dockerfile
+FROM    ubuntu:16.04
+MAINTAINER      Fisher &quot;service@urlos.com&quot;
+
+RUN     apt-get update
+
+EXPOSE  22
+EXPOSE  80
+
+CMD     /bin/bash
+
+
+</code></pre></div><p>每一个指令都会在镜像上创建一个新的层，每一个指令的前缀都必须是大写的。</p> <p>第一条 FROM，指定使用哪个镜像源</p> <p>RUN 指令告诉 docker 在镜像内执行命令，安装了什么</p> <p>这里我们还是一样，执行一个 <code>apt-get update</code> 更新命令</p> <p>然后，我们使用 Dockerfile 文件，通过 <code>docker build -t yeqing112/ubuntu:v3</code> . 命令来构建一个新镜像。</p> <div class="language- extra-class"><pre class="language-text"><code>root@ubuntu:~# root@ubuntu:/home# docker build -t yeqing112/ubuntu:v3 .
+Sending build context to Docker daemon  422.4kB
+Step 1/6 : FROM    ubuntu:16.04
+ ---&gt; 2a697363a870
+Step 2/6 : MAINTAINER      Fisher &quot;service@urlos.com&quot;
+ ---&gt; Running in 92229e7a091a
+Removing intermediate container 92229e7a091a
+ ---&gt; 9a89f4debc7d
+Step 3/6 : RUN     apt-get update
+ ---&gt; Running in d709ef335784
+Get:1 http://archive.ubuntu.com/ubuntu xenial InRelease [247 kB]
+Get:2 http://security.ubuntu.com/ubuntu xenial-security InRelease [109 kB]
+Get:3 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
+Get:4 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
+Get:5 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [844 kB]
+Get:6 http://archive.ubuntu.com/ubuntu xenial/main amd64 Packages [1558 kB]
+Get:7 http://archive.ubuntu.com/ubuntu xenial/restricted amd64 Packages [14.1 kB]
+Get:8 http://archive.ubuntu.com/ubuntu xenial/universe amd64 Packages [9827 kB]
+Get:9 http://security.ubuntu.com/ubuntu xenial-security/restricted amd64 Packages [12.7 kB]
+Get:10 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [556 kB]
+Get:11 http://archive.ubuntu.com/ubuntu xenial/multiverse amd64 Packages [176 kB]
+Get:12 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [1237 kB]
+Get:13 http://archive.ubuntu.com/ubuntu xenial-updates/restricted amd64 Packages [13.1 kB]
+Get:14 http://archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [967 kB]
+Get:15 http://archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 Packages [19.1 kB]
+Get:16 http://archive.ubuntu.com/ubuntu xenial-backports/main amd64 Packages [7942 B]
+Get:17 http://archive.ubuntu.com/ubuntu xenial-backports/universe amd64 Packages [8532 B]
+Get:18 http://security.ubuntu.com/ubuntu xenial-security/multiverse amd64 Packages [6113 B]
+Fetched 15.8 MB in 5s (3051 kB/s)
+Reading package lists...
+Removing intermediate container d709ef335784
+ ---&gt; 540751496556
+Step 4/6 : EXPOSE  22
+ ---&gt; Running in 9ae528bc083f
+Removing intermediate container 9ae528bc083f
+ ---&gt; cfccc621a52d
+Step 5/6 : EXPOSE  80
+ ---&gt; Running in efd88e9349c1
+Removing intermediate container efd88e9349c1
+ ---&gt; 428cb5221a06
+Step 6/6 : CMD     /bin/bash
+ ---&gt; Running in 2bc08b664f97
+Removing intermediate container 2bc08b664f97
+ ---&gt; 9c55ea9b9ee8
+Successfully built 9c55ea9b9ee8
+Successfully tagged yeqing112/ubuntu:v3
+
+
+</code></pre></div><p>参数说明：</p> <ul><li>-t：指定要创建的目标镜像名</li> <li>.：Dockerfile 文件所在目录，可以指定 Dockerfile 的绝对路径</li></ul> <p>构建成功后，使用 <code>docker images</code> 查看镜像：</p> <div class="language- extra-class"><pre class="language-text"><code>root@ubuntu:~# docker images
+REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
+yeqing112/ubuntu             v3                  9c55ea9b9ee8        9 seconds ago       144MB
+yeqing112/ubuntu             v2                  5cce1167ee4c        16 minutes ago      144MB
+ubuntu                       16.04               2a697363a870        2 weeks ago         119MB
+
+
+</code></pre></div><p>由上面的信息看出，新的镜像 v3 与 v2 文件体积是一样的，两个镜像都只是执行了<code>apt-get update</code></p> <h2 id="设置镜像标签"><a href="#设置镜像标签" aria-hidden="true" class="header-anchor">#</a> 设置镜像标签</h2> <p>我们可以使用 <code>docker tag</code> 命令，为镜像添加一个新的标签。</p> <div class="language- extra-class"><pre class="language-text"><code>root@ubuntu:/home# docker tag 9c55ea9b9ee8 yeqing112/ubuntu:v3-1
+
+
+</code></pre></div><p>docker tag 镜像 ID，这里是 9c55ea9b9ee8，用户名称、镜像源名 (repository name) 和新的标签名(tag)。</p> <p>使用 docker images 命令可以看到，ID 为 9c55ea9b9ee8 的镜像多了一个 v3-1 的标签。</p> <div class="language- extra-class"><pre class="language-text"><code>root@ubuntu:/home# docker images
+REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
+yeqing112/ubuntu             v3                  9c55ea9b9ee8        21 minutes ago      144MB
+yeqing112/ubuntu             v3-1                9c55ea9b9ee8        21 minutes ago      144MB
+yeqing112/ubuntu             v2                  5cce1167ee4c        38 minutes ago      144MB
+ubuntu                       16.04               2a697363a870        2 weeks ago         119MB
+
+
+</code></pre></div><h2 id="删除-docker-镜像中为-none-的镜像"><a href="#删除-docker-镜像中为-none-的镜像" aria-hidden="true" class="header-anchor">#</a> 删除 Docker 镜像中为 none 的镜像</h2> <p>Dockerfile 代码更新频繁，自然 docker build 构建同名镜像也频繁的很，产生了众多名为 none 的无用镜像。</p> <p>分别执行以下三行可清除：</p> <div class="language- extra-class"><pre class="language-text"><code>docker ps -a | grep &quot;Exited&quot; | awk '{print $1 }'|xargs docker stop
+docker ps -a | grep &quot;Exited&quot; | awk '{print $1 }'|xargs docker rm
+docker images|grep none|awk '{print $3 }'|xargs docker rmi
+</code></pre></div><p>之前有写过一些 Docker 技巧和命令（在文章的尾部），这里再重复 2 个。
+停止所有容器，删除所有容器：</p> <div class="language- extra-class"><pre class="language-text"><code>docker kill $(docker ps -q) ; docker rm $(docker ps -a -q)
+</code></pre></div><p>停止所有容器，删除所有容器，删除所有镜像：</p> <div class="language- extra-class"><pre class="language-text"><code>docker kill $(docker ps -q) ; docker rm $(docker ps -a -q) ; docker rmi $(docker images -q -a)
+</code></pre></div></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/bookNotes/assets/js/app.a5c1f5ee.js" defer></script><script src="/bookNotes/assets/js/50.68dee525.js" defer></script>
+  </body>
+</html>
